@@ -11,22 +11,84 @@ body {
   background-color: #f8fafc;
   color: #374151;
   line-height: 1.6;
+
+  background-image: url('foto\ de\ fundo.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+
 }
 
+body::before {
+  content: ""; 
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('foto\ de\ fundo.png'); 
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-color: rgba(46, 139, 87, 0.);
+  z-index: -1; 
+
+}
+
+
+
 header {
-  background-color: #047857;
+  background-color: #50a374;
   color: white;
   padding: 1.5rem;
   text-align: center;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
   border-bottom-left-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;
+  background-image: url('foto\ certa.png'); 
+  background-size: cover; 
+  background-position: bottom center; 
+  background-repeat: no-repeat; 
+  position: relative; 
+  overflow: hidden; 
+  min-height: 200px; 
 }
 
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(153, 180, 153, 0.7);
+  z-index: 1; 
+}
+
+header h1, header nav {
+  position: relative; 
+  z-index: 2; 
+}
+
+
 header h1 {
+  color:white;
   font-size: 2.25rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
+}
+
+#menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
 }
 
 nav ul {
@@ -48,19 +110,15 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #d1fae5;
-  background-color: #065f46;
+  color: #e0ffe0;
+  background-color: #1e5128;
 }
 
 main {
   width: 100%;
   max-width: 64rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
 }
 
 section {
@@ -68,13 +126,14 @@ section {
   padding: 2rem;
   margin-bottom: 2.5rem;
   border-radius: 1rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 section h2 {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #166534;
+  color: #2e8b57;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -88,7 +147,7 @@ section p {
 }
 
 section strong {
-  color: #059669;
+  color: #3cb371;
 }
 
 section ul {
@@ -106,35 +165,33 @@ section ul li {
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  margin-top: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin: 1.5rem auto 0;
   max-width: 32rem;
-  margin-left: auto;
-  margin-right: auto;
   display: block;
 }
 
 .icon {
   width: 6rem;
   height: 6rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5rem;
+  margin: 1.5rem auto 0;
   display: block;
 }
 
 .info-box {
-  background-color: #f0fdfa;
-  border-left: 0.25rem solid #14b8a6;
+  background-color: #F0FFF0;
+  border-left: 0.25rem solid #3CB371;
   padding: 1.5rem;
   margin-top: 1.5rem;
   border-radius: 0.5rem;
-  color: #0f766e;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  color: #1e5128;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .info-box strong {
-  color: #0d9488;
+  color: #2E8B57;
 }
 
 section#apoio ul li ul {
@@ -142,7 +199,6 @@ section#apoio ul li ul {
   list-style-position: inside;
   margin-left: 1.5rem;
   margin-top: 0.5rem;
-  margin-bottom: 0;
   font-size: 1.125rem;
 }
 
@@ -151,84 +207,83 @@ section#apoio ul li ul li {
 }
 
 section#apoio ul li a {
-  color: #3b82f6;
+  color: #007bff;
   text-decoration: none;
   transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 section#apoio ul li a:hover {
-  color: #1e40af;
+  color: #0056b3;
   text-decoration: underline;
 }
 
 footer {
-  background-color: #14532d;
-  color: white;
+  color: #374151;
   padding: 1.5rem;
   text-align: center;
   margin-top: 2.5rem;
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  
 }
 
 footer p {
-  font-size: 0.875rem;
+  color:#374151;
+  font-size: 1.125rem;
 }
-
-#backToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: #047857;
-  color: white;
-  cursor: pointer;
-  padding: 0.8rem 1rem;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.3s ease;
-  opacity: 0;
-}
-
-#backToTopBtn:hover {
-  background-color: #065f46;
-}
-
 @media (min-width: 768px) {
   header h1 {
     font-size: 3rem;
   }
+
   nav ul {
     gap: 2rem;
   }
+
   footer p {
-    font-size: 1rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menuToggle {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
   }
 }
 
 @media (max-width: 600px) {
   section {
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
   }
+
   section h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
-  section p, section ul, .info-box {
-    font-size: 1rem;
+
+  section p,
+  section ul,
+  .info-box {
+    font-size: 0.95rem;
   }
+
   .image-introduction {
     max-width: 100%;
   }
+
   .icon {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
   }
+
   #backToTopBtn {
     padding: 0.6rem 0.8rem;
     font-size: 1.2rem;
